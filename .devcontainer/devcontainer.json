@@ -1,0 +1,17 @@
+{
+  "name": "Prolog Development (Ubuntu + SWI-Prolog)",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": ["arthurwang.vsc-prolog"]
+    }
+  },
+  "postCreateCommand": "swipl --version",
+  "remoteUser": "root"
+}

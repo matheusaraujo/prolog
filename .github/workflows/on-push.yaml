@@ -1,0 +1,20 @@
+name: on-push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-prolog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install SWI-Prolog
+        run: sudo apt-get update && sudo apt-get install -y swi-prolog
+
+      - name: Run Prolog script
+        run: swipl -s hello-world.pl -g hello_world -t halt
